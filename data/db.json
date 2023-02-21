@@ -1,0 +1,40 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "ravi krishna",
+      "area": "chennai",
+      "creditlimit": 10000
+    },
+    {
+      "id": 2,
+      "name": "Ramesh",
+      "area": "chennai",
+      "creditlimit": 10000
+    },
+    {
+      "id": 3,
+      "name": "Rahim",
+      "area": "chennai",
+      "creditlimit": 10000
+    },
+    {
+      "id": 4,
+      "name": "Robert",
+      "area": "chennai",
+      "creditlimit": 10000
+    }
+  ],
+  "user": [
+    {
+      "id": "admin",
+      "name": "admin",
+      "role": "admin",
+      "email": "admin@gmail.com",
+      "mobile": "767788989",
+      "password": "admin",
+      "address": "add1,add2",
+      "isactive": true
+    }
+  ]
+}
