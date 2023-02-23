@@ -35,6 +35,87 @@
       "password": "admin",
       "address": "add1,add2",
       "isactive": true
+    },
+    {
+      "id": "testuser",
+      "name": "Ramesh",
+      "email": "r@in.com",
+      "password": "Test@1234",
+      "mobile": "",
+      "address": "",
+      "role": "supervisor",
+      "isactive": true
+    },
+    {
+      "id": "testuser1",
+      "name": "Ravi",
+      "email": "rst@in.com",
+      "password": "test",
+      "mobile": "",
+      "address": "",
+      "role": "user",
+      "isactive": true
+    },
+    {
+      "id": "ntuser",
+      "name": "NT User",
+      "email": "nt@in.com",
+      "password": "test1234",
+      "mobile": "899900",
+      "address": "1111",
+      "role": "manager",
+      "isactive": true
+    }
+  ],
+  "role": [
+    {
+      "code": "user",
+      "name": "User"
+    },
+    {
+      "code": "manager",
+      "name": "Manager"
+    },
+    {
+      "code": "supervisor",
+      "name": "supervisor"
+    }
+  ],
+  "roleaccess":[
+    {
+      "role":"admin",
+      "menu":"customer",
+      "haveadd":true,
+      "haveedit":true,
+      "havedelete":true
+    },
+    {
+      "role":"admin",
+      "menu":"user",
+      "haveadd":true,
+      "haveedit":true,
+      "havedelete":true
+    },
+    {
+      "role":"manager",
+      "menu":"customer",
+      "haveadd":true,
+      "haveedit":true,
+      "havedelete":false
+    },
+    {
+      "role":"supervisor",
+      "menu":"customer",
+      "haveadd":true,
+      "haveedit":false,
+      "havedelete":false
+    },
+    {
+      "role":"user",
+      "menu":"customer",
+      "haveadd":false,
+      "haveedit":false,
+      "havedelete":false
     }
   ]
 }

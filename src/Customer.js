@@ -7,6 +7,10 @@ const Customer = () => {
     const [custlist, custupdate] = useState(null);
     const navigate=useNavigate();
 
+    const [haveadd, haveaddupdate] = useState(false);
+    const [haveedit, haveeditupdate] = useState(false);
+    const [havedelete, havedeleteupdate] = useState(false);
+
     const handleremove=(code)=>{
 
         if(window.confirm('do you want to remove this customer?')){
@@ -23,7 +27,7 @@ const Customer = () => {
     }
 
     useEffect(() => {
-
+        getroleaccess();
         fetch('http://localhost:8000/customer').then(res => {
             return res.json();
         }).then(resp => {
@@ -33,6 +37,30 @@ const Customer = () => {
         });
 
     }, [])
+
+    const getroleaccess=()=>{
+        let userrole = localStorage.getItem('userrole') != null ? localStorage.getItem('userrole').toString() : '';
+        fetch("http://localhost:8000/roleaccess?role="+userrole+"&menu=customer").then(res => {
+            if(!res.ok){
+                toast.warning('You are not autorized to access this menu');
+                navigate('/');
+            }
+            return res.json();
+        }).then(resp => {
+            if(resp.length>0){
+                let obj=resp[0];
+                haveaddupdate(obj.haveadd);
+                haveeditupdate(obj.haveedit);
+                havedeleteupdate(obj.havedelete);
+            }else{
+                toast.warning('You are not autorized to access this menu');
+                navigate('/');
+            }
+        }).catch((err) => {
+            console.log(err.message);
+        });
+
+    }
 
     return (
         <div className="container">
