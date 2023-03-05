@@ -3,31 +3,19 @@
     {
       "id": 1,
       "name": "ravi krishna",
-      "area": "chennai",
+      "area": "Chennai",
       "creditlimit": 10000
     },
     {
       "id": 2,
       "name": "Ramesh",
-      "area": "chennai",
-      "creditlimit": 10000
-    },
-    {
-      "id": 3,
-      "name": "Rahim",
-      "area": "chennai",
-      "creditlimit": 10000
-    },
-    {
-      "id": 4,
-      "name": "Robert",
-      "area": "chennai",
+      "area": "Chennai",
       "creditlimit": 10000
     }
   ],
   "user": [
     {
-      "id": "admin",
+      "id": "adminuser",
       "name": "admin",
       "role": "admin",
       "email": "admin@gmail.com",
@@ -63,7 +51,7 @@
       "password": "test1234",
       "mobile": "899900",
       "address": "1111",
-      "role": "manager",
+      "role": "supervisor",
       "isactive": true
     }
   ],
@@ -81,41 +69,41 @@
       "name": "supervisor"
     }
   ],
-  "roleaccess":[
+  "roleaccess": [
     {
-      "role":"admin",
-      "menu":"customer",
-      "haveadd":true,
-      "haveedit":true,
-      "havedelete":true
+      "role": "admin",
+      "menu": "customer",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true
     },
     {
-      "role":"admin",
-      "menu":"user",
-      "haveadd":true,
-      "haveedit":true,
-      "havedelete":true
+      "role": "admin",
+      "menu": "user",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true
     },
     {
-      "role":"manager",
-      "menu":"customer",
-      "haveadd":true,
-      "haveedit":true,
-      "havedelete":false
+      "role": "manager",
+      "menu": "customer",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": false
     },
     {
-      "role":"supervisor",
-      "menu":"customer",
-      "haveadd":true,
-      "haveedit":false,
-      "havedelete":false
+      "role": "supervisor",
+      "menu": "customer",
+      "haveadd": true,
+      "haveedit": false,
+      "havedelete": false
     },
     {
-      "role":"user",
-      "menu":"customer",
-      "haveadd":false,
-      "haveedit":false,
-      "havedelete":false
+      "role": "user",
+      "menu": "customer",
+      "haveadd": false,
+      "haveedit": false,
+      "havedelete": false
     }
   ]
 }

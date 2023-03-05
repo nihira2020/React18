@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { json, Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -31,6 +31,7 @@ const Login = () => {
                     if (userobj.isactive === true) {
                         localStorage.setItem('username', id);
                         localStorage.setItem('userrole', userobj.role);
+                        loginapi();
                         navigate('/');
                     } else {
 
@@ -45,6 +46,23 @@ const Login = () => {
 
         } else {
             toast.warning('Please enter valid credenetials & proceed');
+        }
+        const loginapi = () => {
+            fetch('https://localhost:44308/User/Authenticate', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    "username": id,
+                    "password": password
+                })
+            }).then(res => {
+                if (res.ok) {
+                    return res.json();
+                }
+            }).then(res => {
+                localStorage.setItem('token', res.jwtToken);
+            });
+
         }
         // if (validate) {
         //     fetch("http://localhost:8000/user", {

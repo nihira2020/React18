@@ -12,6 +12,7 @@ import {ToastContainer} from 'react-toastify'
 import Registeration from './Registeration';
 import Login from './Login';
 import Userlisting from './Userlisting';
+import Associate from './Associate';
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
        <Route path='register' element={<Registeration/>}></Route>
        <Route path='login' element={<Login/>}></Route>
        <Route path='user' element={<Userlisting/>}></Route>
+       <Route path='associate' element={<Associate/>}></Route>
        <Route path='*' element={<Error></Error>}></Route>
       </Routes>
       </BrowserRouter>

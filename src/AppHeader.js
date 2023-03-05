@@ -32,6 +32,7 @@ const Appheader = () => {
                 <Link to="/">Home</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/customer">Customer</Link>
+                <Link to="/associate">Associate</Link>
                 {adminuser &&
                     <Link to="/user">User</Link>
                 }

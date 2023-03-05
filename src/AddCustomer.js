@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {toast} from 'react-toastify'
+import useAccess from "./useAccess";
 
 const Addcustomer = () => {
     const [name, namechange] = useState('');
@@ -28,6 +29,16 @@ const Addcustomer = () => {
         })
 
     }
+    const{haveadd,haveedit,havedelete}=useAccess('customer');
+   
+    useEffect(()=>{
+        if(haveadd===false){
+            toast.warning('You not having access for ADD.');
+            navigate('/customer')
+        }
+    
+    },[haveadd]);
+
 
     return (
         <div>

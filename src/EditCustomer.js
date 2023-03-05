@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {toast} from 'react-toastify'
+import useAccess from "./useAccess";
 
 const Editcustomer = () => {
     const [id, idchange] = useState(0);
@@ -10,9 +11,10 @@ const Editcustomer = () => {
     const{code}=useParams();
 
     const navigate=useNavigate();
+    const{haveadd,haveedit,havedelete}=useAccess('customer');
 
     useEffect(()=>{
-        console.log(code);
+        if(haveedit===true){
 
         fetch("http://localhost:8000/customer/"+code).then(res=>{
             return res.json();
@@ -24,8 +26,12 @@ const Editcustomer = () => {
         }).catch((err)=>{
             console.log(err.message);
         })
+    }else{
+        toast.warning('You not having access for Edit.');
+        navigate('/customer')
+    }
 
-    },[]);
+    },[haveedit]);
 
     const handlesubmit = (e) => {
         e.preventDefault();
@@ -60,7 +66,7 @@ const Editcustomer = () => {
                             <div className="card-body">
                             <div className="form-group">
                                     <label>Code</label>
-                                    <input disabled="true" value={id} onChange={e => idchange(e.target.value)} className="form-control"></input>
+                                    <input  disabled={true} value={id} onChange={e => idchange(e.target.value)} className="form-control"></input>
                                 </div>
                                 <div className="form-group">
                                     <label>Name</label>
